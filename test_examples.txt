@@ -1,0 +1,76 @@
+RailMadad AI Complaint Management - Test Examples
+
+============================================
+1. Text-only complaint
+--------------------------------------------
+Phone: 9876543210
+PNR: 1234567890
+Date: Today
+Complaint Type: Coach Maintenance
+Sub Type: AC Not Working
+Complaint Text: The AC in my coach is not cooling properly.
+
+Expected:
+- Priority: High
+- Department: Coach - Maintenance/Facilities
+- Reply: "🔧 Your coach maintenance issue has been recorded. Our team will attend it at the next station."
+
+============================================
+2. Image-only complaint
+--------------------------------------------
+Phone: 9876501234
+PNR: 5432109876
+Date: Today
+Upload: washroom_dirty.jpg (dirty washroom image)
+Complaint Text: (none)
+
+Expected:
+- Department: Coach - Cleanliness
+- Priority: Medium/High
+- Reply: "🧹 Cleanliness issue noted. Cleaning staff will attend to this at the next major station."
+
+============================================
+3. Video complaint
+--------------------------------------------
+Phone: 9123456780
+PNR: 1112223334
+Date: Today
+Upload: security_issue.mp4 (unruly passenger video)
+Complaint Text: (none)
+
+Expected:
+- Department: Security
+- Priority: High
+- Reply: "🛡️ Your security concern is taken seriously. The onboard security team has been alerted."
+
+============================================
+4. Non-English complaint
+--------------------------------------------
+Phone: 9000000001
+PNR: 9988776655
+Date: Today
+Complaint Type: Catering
+Complaint Text: "ट्रेन का खाना बहुत खराब है।" (Hindi: Train food is very bad)
+
+Expected:
+- Translator → "The train food is very bad."
+- Department: Catering / Vending Services
+- Reply: "🍴 Thank you for reporting the catering issue. The pantry team has been informed."
+
+============================================
+Tracking Test:
+--------------------------------------------
+After submitting, go to Track Your Concern and enter the PNR.
+
+Example: PNR 1234567890
+- Before admin update → Status: In Progress
+- After admin marks resolved → Status: Resolved
+
+============================================
+Admin Dashboard Test:
+--------------------------------------------
+Login: admin / admin123
+- View complaints by department
+- Complaints sorted by priority
+- Use checkboxes to mark "Resolved"
+- Track page should reflect updated status
